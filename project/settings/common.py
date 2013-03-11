@@ -80,6 +80,8 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'suit',
     'django.contrib.admin',
     'django.contrib.admindocs',
 
@@ -95,5 +97,5 @@ INSTALLED_APPS = (
 # 3rd party apps settigns.
 
 SUIT_CONFIG = {
-    'ADMIN_NAME': 'Language Arts'
+    'ADMIN_NAME': 'Nadezhdanova.com'
 }
