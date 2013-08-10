@@ -1,0 +1,178 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+{% load staticfiles %}
+{% load thumbnail %}
+{% load flatblock_tags %}
+
+{% block extrascript %}
+  <script>
+    $(function() {
+      $(".carousel").carousel({
+        interval: 0
+      });
+      $(".carousel figure img").on("click", function(event) {
+        event.preventDefault();
+        $(".carousel").carousel("next");
+      });
+
+      // $(".flexslider").flexslider({
+      //   slideshow: false,
+      //   animation: "slide",
+      //   selector: ".slider > figure",
+      //   start: function(slider) {
+      //     $(".slider figure img").on("click", function(event) {
+      //       event.preventDefault();
+      //       slider.flexAnimate(slider.getTarget("next"));
+      //     });
+      //   }
+      // });
+      $(".activities .activity .slider-container").each(function() {
+        var _this = this;
+        $(this).flexslider({
+          slideshow: false,
+          animation: "slide",
+          selector: ".slides > figure",
+          start: function(slider) {
+            $images = $(_this).find("img");
+            if ($images.length > 1) {
+              $images.on("click", function(event) {
+                event.preventDefault();
+                slider.flexAnimate(slider.getTarget("next"));
+              });
+            }
+          }
+        });
+      });
+    });
+  </script>
+{% endblock extrascript %}
+
+{% block content %}
+  <div class="top-half">
+    <nav class="language-menu">
+      {% if request.LANGUAGE_CODE == "ru" %}
+        <span>RU</span>
+        <a href="{% url "set_language" "en" %}?from={{ request.get_full_path|urlencode }}" title="English">EN</a>
+      {% else %}
+        <a href="{% url "set_language" "ru" %}?from={{ request.get_full_path|urlencode }}" title="Russian">RU</a>
+        <span>EN</span>
+      {% endif %}
+    </nav>
+    {% include "include/slider.html" %}
+    <section class="personal-info">
+      <div class="span5 face">
+        <img src="http://placehold.it/375x470" alt="">
+      </div>
+      <div class="span10 ofset5">
+        <h1>{% trans "About Me" %}</h1>
+      </div>
+      <div class="span10">
+        {% if request.LANGUAGE_CODE == "ru" %}
+          {% flatblock "personal-info-ru" %}
+        {% else %}
+          {% flatblock "personal-info" %}
+        {% endif %}
+        <div class="main-links">
+          <ul>
+            <li>
+              {% trans "Portfolio on" %} <a href="http://www.behance.net/nadezhdanova" target="_blank" title="Behance">{% trans "Behance" %}</a>
+            </li>
+            <li>
+              {% trans "Profile on" %} <a href="http://www.linkedin.com/profile/view?id=116547731" target="_blank" title="LinkedIn">{% trans "LinkedIn" %}</a>
+            </li>
+          </ul>
+        </div>
+        <div class="social-links">
+          <ul>
+            <li>
+              <a href="http://nadezhdanova.tumblr.com/" target="_blank" title="Tumblr">{% trans "Tumblr" %}</a>
+            </li>
+            <li>
+              <a href="https://twitter.com/nadezhdanova" target="_blank" title="Twitter">{% trans "Twitter" %}</a>
+            </li>
+            <li>
+              <a href="http://instagram.com/nadezhdanova" target="_blank" title="Instagram">{% trans "Instagram" %}</a>
+            </li>
+            <li>
+              <a href="http://www.facebook.com/nadya.kutyreva" target="_blank" title="Facebook">{% trans "Facebook" %}</a>
+            </li>
+            {% if request.LANGUAGE_CODE == "ru" %}
+              <li>
+                <a href="http://vk.com/nadezhdanova" target="_blank" title="vKontakte">вконтакте</a>
+              </li>
+            {% endif %}
+          </ul>
+        </div>
+      </div>
+    </section>
+  </div>
+  <section class="principles-of-creativity">
+    <h1>{% trans "Art code" %}</h1>
+    <div class="wrapper">
+      <div class="span5">
+        <p>
+          {% blocktrans %}I create space for living and working. Considered layout is the base, which organizes the living in an interior.{% endblocktrans %}
+        </p>
+      </div>
+      <div class="span5">
+        <p>
+          {% blocktrans %}Interior isn’t an album with pictures and blueprints and not a building site. It is comfortable and attractive environment for your family. It is everything that is surrounded by walls, and what is outside them as well.{% endblocktrans %}
+        </p>
+      </div>
+      <div class="span5">
+        <p>
+          {% blocktrans %}Design is a tool for practical solution of a given task. And do not accept design for design as a functionalist.{% endblocktrans %}
+        </p>
+      </div>
+    </div>
+  </section>
+  {% if tumblr_posts %}
+    <section class="tumblr-posts">
+      <h1>
+        <a href="#">
+          {% trans "Blog" %}
+        </a>
+      </h1>
+      <div class="wrapper">
+        {% for post in tumblr_posts %}
+          <div class="span5">
+            <a href="{{ post.url }}">{{ post.title }}</a>
+            <p>{{ post.text|truncatewords:25 }}</p>
+          </div>
+        {% endfor %}
+    </section>
+  {% endif %}
+  <div class="bottom-half">
+    {% if activities %}
+      <section class="public-activities">
+        <h1>{% trans "Public projects" %}</h1>
+        <p>
+          {% blocktrans %}I can talk hours about architecture, design, and projecting process. In that way I am doing a few projects to develop the architectural community in Chelyabinsk. My friends help me in those activities.{% endblocktrans %}
+        </p>
+        <div class="activities row-fluid show-grid">
+          {% for activity in activities %}
+            <div class="activity span6">
+              <h2>{{ activity.title }}</h2>
+              <div class="slider-container">
+                <div class="slides">
+                  {% for activity_slide in activity.slides.all %}
+                    <figure>
+                      {% thumbnail activity_slide.image "590" format="PNG" as activity_image %}
+                        <img src="{{ activity_image.url }}">
+                      {% endthumbnail %}
+                    </figure>
+                  {% endfor %}
+                </div>
+              </div>
+              <div>{{ activity.text|safe }}</div>
+            </div>
+          {% endfor %}
+        </div>
+      </section>
+    {% endif %}
+    <section class="super-important-thing">
+      <span class="owl"></span>
+    </section>
+  </div>
+{% endblock content %}

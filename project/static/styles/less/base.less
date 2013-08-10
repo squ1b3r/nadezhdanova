@@ -1,0 +1,29 @@
+@import "_variables";
+@import "_mixin";
+@import "_header";
+@import "_slider";
+@import "_footer";
+
+* {
+  font-family: 'Roboto', sans-serif;
+}
+
+body, a {
+  color: @dark_text_color;
+}
+
+a {
+  color: @dark_text_color;
+
+  &:hover {
+    color: @dark_link_color_active;
+    text-decoration: none;
+  }
+}
+
+.container {
+  width: 100%;
+  margin: 0;
+  padding-bottom: 20px;
+}
+

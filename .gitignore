@@ -17,3 +17,6 @@ project/media/
 project/settings/development.py
 
 .DS_Store
+
+/src/
+/.mr.developer.cfg

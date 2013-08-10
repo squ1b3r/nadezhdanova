@@ -1,0 +1,9 @@
+{% load staticfiles %}
+{% load compress %}
+
+{% compress js %}
+  <script src="{% static "js/lib/jquery-1.10.1.min.js" %}"></script>
+  <script src="{% static "js/lib/jquery.flexslider-min.js" %}"></script>
+  <script src="{% static "js/lib/bootstrap-carousel.js" %}"></script>
+{% endcompress %}
+

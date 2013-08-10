@@ -1,0 +1,139 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-07-28 14:58+0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: project/views.py:32 project/templates/base.html:24
+#: project/templates/base.html.py:38
+msgid "Nadya Kutyreva"
+msgstr "Надя Кутырева"
+
+#: project/apps/activities/models.py:11 project/apps/works/models.py:11
+msgid "Title"
+msgstr ""
+
+#: project/apps/activities/models.py:12 project/apps/works/models.py:12
+msgid "Title (ru)"
+msgstr ""
+
+#: project/apps/activities/models.py:15 project/apps/works/models.py:19
+msgid "Text"
+msgstr ""
+
+#: project/apps/activities/models.py:16 project/apps/works/models.py:20
+msgid "Text (ru)"
+msgstr ""
+
+#: project/apps/activities/models.py:19
+msgid "Activities"
+msgstr ""
+
+#: project/apps/activities/models.py:29
+msgid "Activity"
+msgstr ""
+
+#: project/apps/activities/models.py:32
+msgid "Activity Slide"
+msgstr ""
+
+#: project/apps/works/models.py:15
+msgid "Description"
+msgstr ""
+
+#: project/apps/works/models.py:16
+msgid "Description (ru)"
+msgstr ""
+
+#: project/apps/works/models.py:23
+msgid "Display"
+msgstr ""
+
+#: project/apps/works/models.py:24
+msgid "Slide"
+msgstr ""
+
+#: project/templates/base.html:22
+msgid "architect and interior designer"
+msgstr "архитектор и дизайнер"
+
+#: project/templates/base.html:43
+msgid "Andrey Kutyrev"
+msgstr "Андрей Кутырев"
+
+#: project/templates/frontpage.html:44
+msgid "About Me"
+msgstr "О себе"
+
+#: project/templates/frontpage.html:55
+msgid "Portfolio on"
+msgstr "Портфолио на"
+
+#: project/templates/frontpage.html:55
+msgid "Behance"
+msgstr "Бихансе"
+
+#: project/templates/frontpage.html:58
+msgid "Profile on"
+msgstr "Профиль на"
+
+#: project/templates/frontpage.html:58
+msgid "LinkedIn"
+msgstr "Линкед-ине"
+
+#: project/templates/frontpage.html:65
+msgid "Tumblr"
+msgstr "тумблер"
+
+#: project/templates/frontpage.html:68
+msgid "Twitter"
+msgstr "твиттер"
+
+#: project/templates/frontpage.html:71
+msgid "Instagram"
+msgstr "инстаграм"
+
+#: project/templates/frontpage.html:74
+msgid "Facebook"
+msgstr "фейсбук"
+
+#: project/templates/frontpage.html:87
+msgid "Art code"
+msgstr "Творческие принципы"
+
+#: project/templates/frontpage.html:91
+msgid "I create space for living and working. Considered layout is the base, which organizes the living in an interior."
+msgstr "Я создаю пространство для работы и для жизни. Продуманная планировка — это основа, от которой зависит как будет проходить жизнь в интерьере."
+
+#: project/templates/frontpage.html:96
+msgid "Interior isn’t an album with pictures and blueprints and not a building site. It is comfortable and attractive environment for your family. It is everything that is surrounded by walls, and what is outside them as well."
+msgstr "Интерьер — не альбом с картинками и не стройплощадка. Это комфортная и красивая среда для жизни вашей семьи. Это всё то, что окружено стенами и то, что находится за ними."
+
+#: project/templates/frontpage.html:101
+msgid "Design is a tool for practical solution of a given task. And do not accept design for design as a functionalist."
+msgstr "Дизайн — это инструмент для удобного и красивого решения поставленной задачи. Я функционалист и не признаю дизайн ради дизайна."
+
+#: project/templates/frontpage.html:110
+msgid "Blog"
+msgstr "Блог"
+
+#: project/templates/frontpage.html:125
+msgid "Public projects"
+msgstr "Общественные проекты"
+
+#: project/templates/frontpage.html:127
+msgid "I can talk hours about architecture, design, and projecting process. In that way I am doing a few projects to develop the architectural community in Chelyabinsk. My friends help me in those activities."
+msgstr "Об архитектуре, дизайне, проектировании я могу говорить часами. Поэтому с помощью своих друзей я делаю несколько некоммерческих проектов для развития архитектурного сообщества в Челябинске."

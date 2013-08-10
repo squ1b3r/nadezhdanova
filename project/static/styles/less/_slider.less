@@ -1,0 +1,68 @@
+figure {
+  position: relative;
+  display: inline-block;
+  margin: 0 0 1px 0;
+  font-size: 0;
+
+  figcaption {
+    opacity: 1;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, .80);
+  }
+  figcaption {
+    margin-top: 30px;
+    padding-top: 15px;
+    color: @dark_text_color;
+    font-size: 8pt;
+    font-weight: 200px;
+    line-height: 1;
+    text-align: left;
+
+    &:before {
+      content: "";
+      display: inline-block;
+      height: 100%;
+      vertical-align: middle;
+    }
+    h1 {
+      padding: 0;
+      margin: 0 0 5px 0;
+      font-size: 18pt;
+      font-weight: 200;
+      line-height: 1;
+    }
+    .description {
+      // display: none;
+    }
+    .text {
+      font-size: 10pt;
+    }
+  }
+}
+
+.flexslider {
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+.flex-viewport figure img {
+  cursor: pointer;
+}
+.flex-control-nav {
+  bottom: 140px;
+}
+.flex-direction-nav {
+  a {
+    margin-top: -70px;
+
+    &.flex-prev {
+      left: 3px;
+    }
+    &.flex-next {
+      right: 3px;
+    }
+  }
+}
+

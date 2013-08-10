@@ -1,0 +1,32 @@
+.clearfix {
+  zoom: 1;
+
+  &:before, &:after {
+    content: "020";
+    display: block;
+    font-size: 0;
+    height: 0;
+    visibility: hidden;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+.default_link(@border: 1px) {
+  a {
+    color: @dark_link_color;
+    border-bottom: @border solid @dark_link_color;
+
+    &:hover {
+      color: @dark_link_color_active;
+      border-color: @dark_link_color_active
+    }
+  }
+}
+
+.container-size {
+  width: 1200px;
+  max-width: 1600px;
+  margin: 0 auto;
+}

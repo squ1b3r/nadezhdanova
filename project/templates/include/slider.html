@@ -1,0 +1,37 @@
+{% load thumbnail %}
+
+<section id="myCarousel" class="carousel slide">
+  <div class="carousel-inner">
+    {% for slide in main_slides %}
+      <div class="item{% if forloop.first %} active{% endif %}">
+        <figure>
+          {% thumbnail slide.image "1200" as slide_image %}
+            <img src="{{ slide_image.url }}" alt="{{ slide.title }}">
+            {# <img src="http://placehold.it/1200x800" alt="{{ slide.title }}"> #}
+          {% endthumbnail %}
+          <figcaption>
+            <div class="span5">
+              <h1>{{ slide.title }}</h1>
+              <p class="description">
+                {{ slide.description|safe }}
+              </p>
+            </div>
+            <div class="span10">
+              <p class="text">
+                {{ slide.text|safe }}
+              </p>
+            </div>
+          </figcaption>
+        </figure>
+      </div>
+    {% endfor %}
+  </div>
+  <ol class="carousel-indicators">
+    {% for slide in main_slides %}
+      <li data-target="#myCarousel" data-slide-to="{{ forloop.counter0 }}" {% if forloop.first %}class="active"{% endif %}></li>
+    {% endfor %}
+  </ol>
+   <!-- Carousel nav -->
+  <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+  <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+</section>

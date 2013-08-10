@@ -1,0 +1,41 @@
+header {
+  height: 85px;
+  color: @dark_text_color;
+
+  nav {
+    width: 1200px;
+    max-width: 1600px;
+    padding: 0;
+    margin: 0 auto;
+    vertical-align: middle;
+  }
+
+  a {
+    color: @dark_link_color;
+
+    &:hover {
+      color: @dark_link_color_active;
+      border-color: @dark_link_color_active;
+    }
+  }
+
+  h1 {
+    display: inline-block;
+    font-weight: 300;
+    font-size: 16pt;
+
+    span {
+      display: block;
+      width: 250px;
+      margin-top: -5px;
+      font-size: 24pt;
+    }
+  }
+  .email-me {
+    margin-top: 20px;
+    float: right;
+    font-weight: 300;
+    font-size: 12pt;
+    border-bottom: 1px solid @dark_link_color;
+  }
+}
