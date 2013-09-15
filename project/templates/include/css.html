@@ -1,13 +1,10 @@
 {% load staticfiles %}
 {% load compress %}
 
-  <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+<link href="http://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700&subset=latin,cyrillic" rel="stylesheet">
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" >
 
 {% compress css %}
-  <link type="text/css" href="{% static "styles/css/lib/flexslider.css" %}" rel="stylesheet" media="screen">
-
-  <link type="text/less" href="{% static "styles/less/lib/bootstrap/bootstrap.less" %}" rel="stylesheet" media="screen">
-
   <link type="text/less" href="{% static "styles/less/base.less" %}" rel="stylesheet" media="screen">
   <link type="text/less" href="{% static "styles/less/pages/frontpage.less" %}" rel="stylesheet" media="screen">
 {% endcompress %}

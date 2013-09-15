@@ -8,48 +8,37 @@
 {% block extrascript %}
   <script>
     $(function() {
-      $(".carousel").carousel({
-        interval: 0
-      });
-      $(".carousel figure img").on("click", function(event) {
-        event.preventDefault();
-        $(".carousel").carousel("next");
-      });
-
-      // $(".flexslider").flexslider({
-      //   slideshow: false,
-      //   animation: "slide",
-      //   selector: ".slider > figure",
-      //   start: function(slider) {
-      //     $(".slider figure img").on("click", function(event) {
-      //       event.preventDefault();
-      //       slider.flexAnimate(slider.getTarget("next"));
-      //     });
-      //   }
-      // });
-      $(".activities .activity .slider-container").each(function() {
+      $(".carousel").each(function() {
         var _this = this;
-        $(this).flexslider({
-          slideshow: false,
-          animation: "slide",
-          selector: ".slides > figure",
-          start: function(slider) {
-            $images = $(_this).find("img");
-            if ($images.length > 1) {
-              $images.on("click", function(event) {
-                event.preventDefault();
-                slider.flexAnimate(slider.getTarget("next"));
-              });
-            }
-          }
+        $(this).carousel({
+          interval: 0
         });
-      });
+        $(this).find("img").on("click", function(event) {
+          event.preventDefault();
+          $(_this).carousel("next");
+        });
+      })
+      $("#main-slider figcaption").hover(
+        function() {
+          $(this).addClass("active");
+          $("#main-slider .carousel-control.left").hide();
+        },
+        function() {
+          var _this = this;
+          $(this).find(".description").addClass("transition");
+          $(this).removeClass("active");
+          setTimeout(function () {
+            $(_this).find(".description").removeClass("transition");
+          }, 100);
+          $("#main-slider .carousel-control.left").show();
+        }
+      );
     });
   </script>
 {% endblock extrascript %}
 
-{% block content %}
-  <div class="top-half">
+{% block container %}
+  <div class="container">
     <nav class="language-menu">
       {% if request.LANGUAGE_CODE == "ru" %}
         <span>RU</span>
@@ -61,13 +50,11 @@
     </nav>
     {% include "include/slider.html" %}
     <section class="personal-info">
-      <div class="span5 face">
-        <img src="http://placehold.it/375x470" alt="">
+      <div class="col-lg-4 face">
+        <img src="http://placehold.it/375x470" alt="{% trans "Nadya Kutyreva" %}" class="img-responsive">
       </div>
-      <div class="span10 ofset5">
+      <div class="col-lg-8">
         <h1>{% trans "About Me" %}</h1>
-      </div>
-      <div class="span10">
         {% if request.LANGUAGE_CODE == "ru" %}
           {% flatblock "personal-info-ru" %}
         {% else %}
@@ -108,63 +95,79 @@
     </section>
   </div>
   <section class="principles-of-creativity">
-    <h1>{% trans "Art code" %}</h1>
-    <div class="wrapper">
-      <div class="span5">
-        <p>
-          {% blocktrans %}I create space for living and working. Considered layout is the base, which organizes the living in an interior.{% endblocktrans %}
-        </p>
-      </div>
-      <div class="span5">
-        <p>
-          {% blocktrans %}Interior isn’t an album with pictures and blueprints and not a building site. It is comfortable and attractive environment for your family. It is everything that is surrounded by walls, and what is outside them as well.{% endblocktrans %}
-        </p>
-      </div>
-      <div class="span5">
-        <p>
-          {% blocktrans %}Design is a tool for practical solution of a given task. And do not accept design for design as a functionalist.{% endblocktrans %}
-        </p>
+    <div class="container">
+      <h1>{% trans "Art code" %}</h1>
+      <div class="wrapper">
+        <div class="col-lg-4">
+          <p>
+            {% blocktrans %}I create space for living and working. Considered layout is the base, which organizes the living in an interior.{% endblocktrans %}
+          </p>
+        </div>
+        <div class="col-lg-4">
+          <p>
+            {% blocktrans %}Interior isn’t an album with pictures and blueprints and not a building site. It is comfortable and attractive environment for your family. It is everything that is surrounded by walls, and what is outside them as well.{% endblocktrans %}
+          </p>
+        </div>
+        <div class="col-lg-4">
+          <p>
+            {% blocktrans %}Design is a tool for practical solution of a given task. And do not accept design for design as a functionalist.{% endblocktrans %}
+          </p>
+        </div>
       </div>
     </div>
   </section>
   {% if tumblr_posts %}
-    <section class="tumblr-posts">
+    <section class="tumblr-posts container">
       <h1>
         <a href="#">
           {% trans "Blog" %}
         </a>
       </h1>
-      <div class="wrapper">
+      <div class="wrapper row">
         {% for post in tumblr_posts %}
-          <div class="span5">
-            <a href="{{ post.url }}">{{ post.title }}</a>
+          <div class="col-lg-4">
+            <a href="{{ post.url }}" target="_blank">{{ post.title }}</a>
             <p>{{ post.text|truncatewords:25 }}</p>
           </div>
         {% endfor %}
     </section>
   {% endif %}
-  <div class="bottom-half">
+  <div class="container">
     {% if activities %}
       <section class="public-activities">
         <h1>{% trans "Public projects" %}</h1>
         <p>
           {% blocktrans %}I can talk hours about architecture, design, and projecting process. In that way I am doing a few projects to develop the architectural community in Chelyabinsk. My friends help me in those activities.{% endblocktrans %}
         </p>
-        <div class="activities row-fluid show-grid">
+        <div class="activities">
           {% for activity in activities %}
-            <div class="activity span6">
+            <div class="activity col-lg-6">
               <h2>{{ activity.title }}</h2>
-              <div class="slider-container">
-                <div class="slides">
+              <section id="activity-{{ activity.id }}" class="carousel slide">
+                <div class="carousel-inner">
                   {% for activity_slide in activity.slides.all %}
-                    <figure>
-                      {% thumbnail activity_slide.image "590" format="PNG" as activity_image %}
-                        <img src="{{ activity_image.url }}">
-                      {% endthumbnail %}
-                    </figure>
+                    <div class="item{% if forloop.first %} active{% endif %}">
+                      <figure>
+                        {% thumbnail activity_slide.image "590" format="PNG" as activity_image %}
+                          <img src="{{ activity_image.url }}">
+                        {% endthumbnail %}
+                      </figure>
+                    </div>
                   {% endfor %}
                 </div>
-              </div>
+                <ol class="carousel-indicators">
+                  {% for slide in activity.slides.all %}
+                    <li data-target="#activity-{{ activity.id }}" data-slide-to="{{ forloop.counter0 }}" {% if forloop.first %}class="active"{% endif %}></li>
+                  {% endfor %}
+                </ol>
+                <!-- Controls -->
+                <a class="left carousel-control" href="#activity-{{ activity.id }}" data-slide="prev">
+                  <span class="icon-prev"></span>
+                </a>
+                <a class="right carousel-control" href="#activity-{{ activity.id }}" data-slide="next">
+                  <span class="icon-next"></span>
+                </a>
+              </section>
               <div>{{ activity.text|safe }}</div>
             </div>
           {% endfor %}
@@ -175,4 +178,4 @@
       <span class="owl"></span>
     </section>
   </div>
-{% endblock content %}
+{% endblock container %}

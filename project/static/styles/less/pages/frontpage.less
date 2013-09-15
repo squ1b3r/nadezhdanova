@@ -1,9 +1,5 @@
 @import "../base";
 
-.top-half, .bottom-half {
-  .container-size;
-}
-
 h1 {
   margin-bottom: 30px;
   font-size: 170%;
@@ -14,10 +10,6 @@ h2 {
   font-size: 120%;
   font-weight: 400;
 }
-section [class*="span"]:nth-child(1), .row-fluid [class*="span"]:nth-child(odd) {
-  margin-left: 0;
-}
-
 .language-menu {
   margin: 10px 0 20px;
   text-align: right;
@@ -38,11 +30,17 @@ section [class*="span"]:nth-child(1), .row-fluid [class*="span"]:nth-child(odd) 
 }
 
 section.personal-info {
-  padding-top: 10px;
+  margin-top: 80px;
   margin-bottom: 50px;
 
+  .col-lg-4 {
+    padding-left: 0;
+  }
+  .col-lg-8 {
+    padding-right: 0;
+  }
   .face {
-    margin-top: 33px;
+    margin-top: 20px;
   }
   h1 {
     margin-top: -10px;
@@ -85,19 +83,24 @@ section.personal-info {
   }
   .clearfix;
 }
-section.principles-of-creativity, section.tumblr-posts {
+section.principles-of-creativity {
   margin-bottom: 30px;
-  padding: 30px 0 15px;
+  padding: 30px 0 0;
   background: url("../../img/stripes.png");
 
   .wrapper {
-    height: 70px;
-    .container-size;
-    padding: 25px 0 50px;
     background: url("../../img/coffee.png") right bottom no-repeat;
+    padding-bottom: 15px;
+
+    .col-lg-4:first-child {
+      padding-left: 0;
+    }
+    .col-lg-4:last-child {
+      padding-right: 0;
+    }
+    .clearfix;
   }
   h1 {
-    .container-size;
     text-align: left;
     font-weight: 200;
   }
@@ -109,14 +112,20 @@ section.principles-of-creativity, section.tumblr-posts {
   .clearfix;
 }
 section.tumblr-posts {
-  background: none;
 
   .wrapper {
-    background: none;
+    margin-left: -25px;
+    margin-right: -25px;
+    padding: 25px 0 15px;
     border: 2px dashed @dark_link_color_active;
-    height: 100px;
-    padding-left: 25px;
-    padding-right: 25px;
+
+    .col-lg-4:first-child {
+      padding-left: 25px;
+    }
+    .col-lg-4:last-child {
+      padding-right: 25px;
+    }
+    .clearfix;
   }
   h1 {
     margin-bottom: 15px;
@@ -130,31 +139,18 @@ section.tumblr-posts {
 section.public-activities {
   color: @dark_text_color;
 
-  .slides {
-    margin-bottom: 20px;
-  }
   .activity {
-    .slider-container {
-      position: relative;
-      margin-bottom: 10px;
+    &.col-lg-6:nth-child(odd) {
+      padding-left: 0
     }
-    .flex-control-nav {
-      bottom: 5px;
-      padding-right: 5px;
-
-      li {
-        margin: 0 5px;
-      }
-      a {
-        width: 9px;
-        height: 9px;
-        line-height: 0;
-        font-size: 0;
-        color: transparent;
-        border: none;
-      }
+    &.col-lg-6:nth-child(even) {
+      padding-right: 0
+    }
+    .slide + div {
+      margin-top: 35px;
     }
   }
+  .clearfix;
 }
 section.super-important-thing {
   margin: 50px 0 20px;
@@ -169,5 +165,11 @@ section.super-important-thing {
     &:hover {
       background: url("../../img/owl-kawaii.png") center center no-repeat;
     }
+  }
+}
+
+footer {
+  .col-lg-6:last-child {
+    text-align: right;
   }
 }
