@@ -15,7 +15,7 @@ urlpatterns = patterns(None,
     url(r"^admin/doc/", include("django.contrib.admindocs.urls")),
     url(r"^admin/", include(admin.site.urls)),
 
-    url(r"^imperavi/", include("imperavi.urls")),
+    url(r"^_redator/", include("redator.urls", namespace="redactor", app_name="redator")),
 )
 
 urlpatterns += common_urlpatterns

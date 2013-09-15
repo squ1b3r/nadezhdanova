@@ -18,9 +18,8 @@ class Slide(TranslationMixin):
     description_ru = models.TextField(verbose_name=_(u"Description (ru)"),
                                       blank=True, null=True)
 
-    text = models.TextField(verbose_name=_(u"Text"))
-    text_ru = models.TextField(verbose_name=_(u"Text (ru)"), blank=True,
-                               null=True)
+    text = models.TextField(verbose_name=_(u"Text"), blank=True)
+    text_ru = models.TextField(verbose_name=_(u"Text (ru)"), blank=True, null=True)
 
     is_active = models.BooleanField(default=True, verbose_name=_(u"Display"))
     image = ImageField(upload_to="upload/slides", verbose_name=_(u"Slide"))

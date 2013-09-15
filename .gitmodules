@@ -1,0 +1,3 @@
+[submodule "project/static/redactor"]
+	path = project/static/redactor
+	url = git@github.com:squ1b3r/redactor.git

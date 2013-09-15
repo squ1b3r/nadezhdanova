@@ -49,8 +49,8 @@ STATICFILES_DIRS = (
 )
 
 STATICFILES_FINDERS = (
-    "django.contrib.staticfiles.finders.FileSystemFinder",
     "django.contrib.staticfiles.finders.AppDirectoriesFinder",
+    "django.contrib.staticfiles.finders.FileSystemFinder",
 
     "compressor.finders.CompressorFinder",
 )
@@ -108,13 +108,12 @@ INSTALLED_APPS = (
     "django.contrib.admindocs",
 
     # 3rd party.
-    "imperavi",
     "south",
     "gunicorn",
     "sorl.thumbnail",
     "compressor",
     "flatblocks",
-    "suit_ckeditor",
+    "redator",
 
     # project apps.
     "activities",
@@ -137,6 +136,10 @@ COMPRESS_PRECOMPILERS = (
     ("text/less", "lessc {infile} {outfile}"),
 )
 
-# IMPERAVI_CUSTOM_SETTINGS = {
-#     "wym": True
-# }
+# Redactor
+REDATOR_REDACTOR_OPTIONS = {
+    "wym": True,
+    "autoresize": True,
+    "removeEmptyTags": True,
+    "pastePlainText": True,
+}

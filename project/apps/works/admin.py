@@ -1,37 +1,22 @@
 # -*- coding: utf-8 -*-
 
+from django.db import models
 from django.contrib import admin
-from django.forms import ModelForm
 
-from suit_ckeditor.widgets import CKEditorWidget
 from sorl.thumbnail import get_thumbnail
 from sorl.thumbnail.admin import AdminImageMixin
 from suit.admin import SortableModelAdmin
+from redator.widgets import RedactorEditorAdmin
 
 from works.models import Slide
-
-editor_options = {
-    "toolbar": [
-        ['Source', '-', 'Bold', 'Italic']
-    ]
-}
-
-
-class SlideAdminForm(ModelForm):
-
-    class Meta:
-        widgets = {
-            "description": CKEditorWidget(editor_options=editor_options),
-            "description_ru": CKEditorWidget(editor_options=editor_options),
-            "text": CKEditorWidget(editor_options=editor_options),
-            "text_ru": CKEditorWidget(editor_options=editor_options)
-        }
 
 
 class SlideAdmin(AdminImageMixin, SortableModelAdmin):
 
-    form = SlideAdminForm
-    list_display = ("slide_thumbnail", "title", "is_active",)
+    formfield_overrides = {
+        models.TextField: {"widget": RedactorEditorAdmin}
+    }
+    list_display = ("slide_thumbnail", "title", "is_active")
     list_editable = ("is_active",)
     fields = (
         "image",
