@@ -50,9 +50,9 @@
     <nav class="language-menu">
       {% if request.LANGUAGE_CODE == "ru" %}
         <span>RU</span>
-        <a href="{% url "set_language" "en" %}?from={{ request.get_full_path|urlencode }}" title="English">EN</a>
+        <a href="{% url "set_language" "en" %}?from={{ request.get_full_path|urlencode }}" title="English" rel="external">EN</a>
       {% else %}
-        <a href="{% url "set_language" "ru" %}?from={{ request.get_full_path|urlencode }}" title="Russian">RU</a>
+        <a href="{% url "set_language" "ru" %}?from={{ request.get_full_path|urlencode }}" title="Russian" rel="external">RU</a>
         <span>EN</span>
       {% endif %}
     </nav>
