@@ -17,6 +17,14 @@
           event.preventDefault();
           $(_this).carousel("next");
         });
+        $(this).find("img").on("swipeleft", function(event) {
+          event.preventDefault();
+          $(_this).carousel("next");
+        });
+        $(this).find("img").on("swiperight", function(event) {
+          event.preventDefault();
+          $(_this).carousel("prev");
+        });
       })
       $("#main-slider figcaption").hover(
         function() {
@@ -50,10 +58,10 @@
     </nav>
     {% include "include/slider.html" %}
     <section class="personal-info">
-      <div class="col-lg-4 face">
-        <img src="http://placehold.it/375x470" alt="{% trans "Nadya Kutyreva" %}" class="img-responsive">
+      <div class="col-lg-4 col-md-4 col-xs-4 face">
+        <img src="{% static "img/photo.jpg" %}" alt="{% trans "Nadya Kutyreva" %}" class="img-responsive">
       </div>
-      <div class="col-lg-8">
+      <div class="col-lg-8 col-md-8 col-xs-8">
         <h1>{% trans "About Me" %}</h1>
         {% if request.LANGUAGE_CODE == "ru" %}
           {% flatblock "personal-info-ru" %}
@@ -70,7 +78,7 @@
             </li>
           </ul>
         </div>
-        <div class="social-links">
+        <div class="links social">
           <ul>
             <li>
               <a href="http://nadezhdanova.tumblr.com/" target="_blank" title="Tumblr">{% trans "Tumblr" %}</a>
@@ -149,7 +157,7 @@
                     <div class="item{% if forloop.first %} active{% endif %}">
                       <figure>
                         {% thumbnail activity_slide.image "590" format="PNG" as activity_image %}
-                          <img src="{{ activity_image.url }}">
+                          <img src="{{ activity_image.url }}" class="img-responsive" draggable="false">
                         {% endthumbnail %}
                       </figure>
                     </div>
@@ -157,7 +165,9 @@
                 </div>
                 <ol class="carousel-indicators">
                   {% for slide in activity.slides.all %}
-                    <li data-target="#activity-{{ activity.id }}" data-slide-to="{{ forloop.counter0 }}" {% if forloop.first %}class="active"{% endif %}></li>
+                    <li data-target="#activity-{{ activity.id }}" data-slide-to="{{ forloop.counter0 }}" {% if forloop.first %}class="active"{% endif %}>
+                      <span></span>
+                    </li>
                   {% endfor %}
                 </ol>
                 <!-- Controls -->

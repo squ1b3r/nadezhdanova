@@ -11,6 +11,8 @@ figure {
     z-index: 2;
     transition: all 0.7s ease-in-out;
 
+    margin-right: 50px;
+
     &.active {
       top: 0;
       bottom: 0;
@@ -41,6 +43,7 @@ figure {
       font-size: 18pt;
       font-weight: 100;
       line-height: 1;
+      letter-spacing: 2px;
     }
     .description {
       opacity: 0;
@@ -53,8 +56,15 @@ figure {
 
       p, div {
         line-height: 1.8;
-        font-size: 11pt;
+        font-size: 15px;
         font-weight: 300;
+      }
+      p:nth-child(-n+2) {
+        font-size: 12px;
+        line-height: 1.5;
+      }
+      p:nth-child(2) {
+        margin-bottom: 30px;
       }
     }
   }
@@ -73,16 +83,31 @@ figure {
   bottom: -30px;
 
   li {
-    margin: 0 5px;
-    background: #666666;
-    border-color: #666666;
+    width: auto;
+    height: auto;
+    padding: 5px;
+    background: none;
+    border: none;
+    border-radius: 0;
 
     &.active {
+      width: auto;
+      height: auto;
+
+      span {
+        background: #E0E0E0;
+        border-color: #E0E0E0;
+        margin: -11px 1px 0;
+      }
+    }
+    span {
+      display: block;
       width: 10px;
       height: 10px;
-      margin: 0 5px;
-      background: #E0E0E0;
-      border-color: #E0E0E0;
+      cursor: pointer;
+      border: 1px solid #666666;
+      border-radius: 50%;
+      background: #666666;
     }
   }
 }

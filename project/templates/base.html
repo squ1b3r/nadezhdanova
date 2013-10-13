@@ -2,7 +2,7 @@
 {% load staticfiles %}
 
 <!DOCTYPE html>
-<html>
+<html lang="{{ request.LANGUAGE_CODE }}">
   <head>
     <title>{% block page_title %}{% if page_title %}{{ page_title }}{% endif %}{% endblock %}</title>
     <meta charset="utf-8">
@@ -24,7 +24,7 @@
             {% trans "Nadya Kutyreva" %}
           </span>
         </h1>
-        <a class="email-me" href="mailto:nadya@nadezhdanova.com" "nadya@nadezhdanova.com">nadya@nadezhdanova.com</a>
+        <a class="email-me" href="mailto:mail@nadyakutyreva.com">mail@nadyakutyreva.com</a>
       </nav>
     </header>
     {% block container %}

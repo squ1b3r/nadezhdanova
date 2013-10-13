@@ -6,9 +6,9 @@
       <div class="item{% if forloop.first %} active{% endif %}">
         <figure>
           {% thumbnail slide.image "1200" as slide_image %}
-            <img src="{{ slide_image.url }}" alt="{{ slide.title }}" class="img-responsive">
+            <img src="{{ slide_image.url }}" alt="{{ slide.title }}" class="img-responsive" draggable="false">
           {% endthumbnail %}
-          <figcaption class="col-lg-4">
+          <figcaption class="col-lg-4 col-md-4">
             <div class="inner">
               <h1>{{ slide.title }}</h1>
               <div class="description">
@@ -23,7 +23,9 @@
   </div>
   <ol class="carousel-indicators">
     {% for slide in main_slides %}
-      <li data-target="#main-slider" data-slide-to="{{ forloop.counter0 }}" {% if forloop.first %}class="active"{% endif %}></li>
+      <li data-target="#main-slider" data-slide-to="{{ forloop.counter0 }}" {% if forloop.first %}class="active"{% endif %}>
+        <span></span>
+      </li>
     {% endfor %}
   </ol>
   <!-- Controls -->

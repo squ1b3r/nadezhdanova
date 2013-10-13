@@ -2,20 +2,19 @@
 
 h1 {
   margin-bottom: 30px;
-  font-size: 170%;
-  font-weight: 400;
 }
-h2 {
-  margin-bottom: 10px;
-  font-size: 120%;
-  font-weight: 400;
-}
+
 .language-menu {
-  margin: 10px 0 20px;
+  margin-bottom: 20px;
   text-align: right;
 
+  span, a {
+    font-weight: 300;
+    font-size: 17px;
+  }
+
   span {
-    color: @dark_text_color;
+    color: @dark_link_color_active;
   }
   a {
     color: @dark_link_color;
@@ -43,11 +42,12 @@ section.personal-info {
     margin-top: 20px;
   }
   h1 {
-    margin-top: -10px;
-    margin-bottom: 0;
+    margin-top: -20px;
+    margin-bottom: 10px;
   }
   .flatblock {
     padding-right: 22px;
+    line-height: 1.6
   }
   .main-links {
     margin-top: 15px;
@@ -63,7 +63,8 @@ section.personal-info {
       }
     }
   }
-  .social-links {
+  .links.social {
+    display: block;
     margin-top: 20px;
 
     ul {
@@ -76,17 +77,22 @@ section.personal-info {
         .default_link;
         a {
           margin-right: 20px;
-          font-size: 85%
+          font-size: 13px;
         }
       }
     }
   }
   .clearfix;
 }
+
 section.principles-of-creativity {
   margin-bottom: 30px;
-  padding: 30px 0 0;
+  padding-top: 10px;
   background: url("../../img/stripes.png");
+
+  .container {
+    padding-bottom: 18px;
+  }
 
   .wrapper {
     background: url("../../img/coffee.png") right bottom no-repeat;
@@ -102,15 +108,16 @@ section.principles-of-creativity {
   }
   h1 {
     text-align: left;
-    font-weight: 200;
+    margin-bottom: 20px;
   }
   p {
-    font-size: 120%;
+    font-size: 17px;
     font-weight: 300;
     vertical-align: top;
   }
   .clearfix;
 }
+
 section.tumblr-posts {
 
   .wrapper {
@@ -136,6 +143,7 @@ section.tumblr-posts {
   .default_link;
   .clearfix;
 }
+
 section.public-activities {
   color: @dark_text_color;
 
@@ -152,6 +160,7 @@ section.public-activities {
   }
   .clearfix;
 }
+
 section.super-important-thing {
   margin: 50px 0 20px;
   text-align: center;
@@ -172,4 +181,127 @@ footer {
   .col-lg-6:last-child {
     text-align: right;
   }
+}
+
+// Media queries
+@media screen and (max-width: 1199px) {
+  .carousel-indicators {
+    display: none;
+  }
+
+  section.carousel {
+    figcaption {
+      padding-right: 0;
+    }
+  }
+
+  section.personal-info {
+    margin-top: 45px;
+  }
+
+  section.principles-of-creativity .wrapper {
+    padding-bottom: 35px;
+
+    .col-lg-4 {
+      padding-left: 0;
+
+      p {
+        margin-bottom: 20px;
+      }
+    }
+  }
+  section.tumblr-posts .wrapper {
+    .col-lg-4 {
+      padding-left: 25px;
+    }
+  }
+  section.public-activities .activity.col-lg-6 {
+    padding-left: 0;
+    padding-right: 0;
+
+    .slide + div {
+      margin-top: 10px;
+    }
+
+    figure {
+      text-align: center;
+
+      img {
+        display: inline-block;
+      }
+    }
+  }
+  footer .col-lg-6 {
+    float: left;
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #main-slider figcaption {
+    width: 60%;
+  }
+}
+
+.phone_styles {
+  header {
+    height: auto;
+
+    nav {
+      text-align: left;
+
+      h1 {
+        width: 100%;
+        margin-bottom: 0;
+
+        html[lang="en"] {
+          font-size: 19px;
+        }
+      }
+      .email-me {
+        display: block;
+        float: left;
+        margin: 10px 0;
+      }
+    }
+  }
+  .language-menu {
+    text-align: left;
+    margin-bottom: 10px;
+  }
+  #main-slider {
+    figcaption {
+      display: none;
+    }
+  }
+  section.personal-info {
+    margin-top: 35px;
+
+    .face {
+      display: none;
+
+      & + div {
+        width: 100%;
+        padding-left: 0;
+
+        .flatblock {
+          padding-right: 0;
+        }
+      }
+    }
+  }
+}
+
+// iPhone 5
+@media screen and (device-aspect-ratio: 40/71) {
+  .phone_styles;
+}
+
+// iPhone < 5
+@media screen and (device-aspect-ratio: 2/3) {
+  .phone_styles;
+}
+
+@media screen and (max-width:480px) {
+  .phone_styles;
 }
