@@ -3,7 +3,7 @@
 
 from os.path import dirname, join, abspath
 
-# from logging import LOGGING
+from logging import LOGGING
 
 
 DEBUG = True
