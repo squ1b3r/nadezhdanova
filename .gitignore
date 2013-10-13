@@ -15,6 +15,7 @@ log/
 project/sitestatic/
 project/media/
 project/settings/development.py
+project/settings/production.py
 
 .DS_Store
 
