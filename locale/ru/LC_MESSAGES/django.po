@@ -116,15 +116,15 @@ msgstr "Творческие принципы"
 
 #: project/templates/frontpage.html:91
 msgid "I create space for living and working. Considered layout is the base, which organizes the living in an interior."
-msgstr "Я создаю пространство для работы и для жизни. Продуманная планировка — это основа, от которой зависит как будет проходить жизнь в интерьере."
+msgstr "Я создаю пространство для работы и для жизни. Продуманная планировка — это основа, от которой зависит, как будет проходить жизнь в интерьере."
 
 #: project/templates/frontpage.html:96
 msgid "Interior isn’t an album with pictures and blueprints and not a building site. It is comfortable and attractive environment for your family. It is everything that is surrounded by walls, and what is outside them as well."
-msgstr "Интерьер — не альбом с картинками и не стройплощадка. Это комфортная и красивая среда для жизни вашей семьи. Это всё то, что окружено стенами и то, что находится за ними."
+msgstr "Интерьер не альбом с картинками и не стройплощадка. Это комфортная и красивая среда для жизни вашей семьи. Это всё то, что окружено стенами и то, что находится за ними."
 
 #: project/templates/frontpage.html:101
 msgid "Design is a tool for practical solution of a given task. And do not accept design for design as a functionalist."
-msgstr "Дизайн — это инструмент для удобного и красивого решения поставленной задачи. Я функционалист и не признаю дизайн ради дизайна."
+msgstr "Дизайн — это инструмент для удобного и красивого решения поставленной задачи. Я — функционалист и не признаю дизайн ради дизайна."
 
 #: project/templates/frontpage.html:110
 msgid "Blog"

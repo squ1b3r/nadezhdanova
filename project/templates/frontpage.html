@@ -127,7 +127,7 @@
   {% if tumblr_posts %}
     <section class="tumblr-posts container">
       <h1>
-        <a href="#">
+        <a href="{% if request.LANGUAGE_CODE == "ru" %}http://nadezhdanova.tumblr.com{% else %}http://nadezhdanova-eng.tumblr.com{% endif %}">
           {% trans "Blog" %}
         </a>
       </h1>
