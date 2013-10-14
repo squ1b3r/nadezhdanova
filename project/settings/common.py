@@ -3,9 +3,6 @@
 
 from os.path import dirname, join, abspath
 
-from logging import LOGGING
-
-
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
@@ -114,6 +111,7 @@ INSTALLED_APPS = (
     "compressor",
     "flatblocks",
     "redator",
+    "raven.contrib.django.raven_compat",
 
     # project apps.
     "activities",
@@ -124,6 +122,8 @@ INSTALLED_APPS = (
 LOCALE_PATHS = (
     join(dirname(__file__), "../../locale"),
 )
+
+from logging import LOGGING
 
 # 3rd party apps settigns.
 
