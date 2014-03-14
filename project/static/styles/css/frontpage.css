@@ -1,0 +1,649 @@
+.clearfix {
+  zoom: 1;
+}
+.clearfix:before,
+.clearfix:after {
+  content: "020";
+  display: block;
+  font-size: 0;
+  height: 0;
+  visibility: hidden;
+}
+.clearfix:after {
+  clear: both;
+}
+header {
+  height: 85px;
+  color: #000000;
+}
+header nav {
+  margin-top: 7px;
+  vertical-align: middle;
+}
+header a {
+  color: #000000;
+}
+header a:hover {
+  color: #939393;
+  border-color: #939393;
+}
+header h1 {
+  display: inline-block;
+  font-weight: lighter;
+  font-size: 24px;
+  letter-spacing: 1px;
+}
+header h1 span {
+  display: block;
+  width: 350px;
+  margin-top: -5px;
+  margin-left: -3px;
+  font-size: 38px;
+  letter-spacing: 1.5px;
+}
+header .email-me {
+  margin-top: 20px;
+  float: right;
+  font-weight: lighter;
+  font-size: 19px;
+  border-bottom: 1px solid #000000;
+}
+figure {
+  position: relative;
+}
+figure figcaption {
+  position: absolute !important;
+  top: calc(100% - 25px - 40px);
+  left: 0;
+  bottom: 25px;
+  padding-left: 0 !important;
+  cursor: pointer;
+  z-index: 2;
+  transition: all 0.7s ease-in-out;
+  margin-right: 50px;
+}
+figure figcaption.active {
+  top: 0;
+  bottom: 0;
+}
+figure figcaption.active .inner {
+  height: 100%;
+  padding-top: 45px;
+  padding-bottom: 45px;
+}
+figure figcaption.active .inner .description {
+  opacity: 1;
+}
+figure .inner {
+  display: block;
+  height: 40px;
+  padding: 9px 30px;
+  color: #ffffff;
+  text-align: left;
+  background: rgba(0, 0, 0, 0.6);
+  transition: height 0.7s ease-in-out 0.3s, padding-top 0.7s ease-in-out, padding-bottom 0.7s ease-in-out;
+}
+figure .inner h1 {
+  margin: 0;
+  padding: 0;
+  font-size: 18pt;
+  font-weight: 100;
+  line-height: 1;
+  letter-spacing: 2px;
+}
+figure .inner .description {
+  opacity: 0;
+  margin-top: 30px;
+  transition: opacity 0.5s ease-in-out 0.6s;
+}
+figure .inner .description.transition {
+  transition: opacity 0.3s ease-in-out;
+}
+figure .inner .description p,
+figure .inner .description div {
+  line-height: 1.8;
+  font-size: 15px;
+  font-weight: 300;
+}
+figure .inner .description p:nth-child(-n+2) {
+  font-size: 12px;
+  line-height: 1.5;
+}
+figure .inner .description p:nth-child(2) {
+  margin-bottom: 30px;
+}
+.container .carousel-control {
+  background: none;
+  background-image: none;
+}
+.carousel-indicators {
+  width: auto;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  bottom: -30px;
+}
+.carousel-indicators li {
+  width: auto;
+  height: auto;
+  padding: 5px;
+  background: none;
+  border: none;
+  border-radius: 0;
+}
+.carousel-indicators li.active {
+  width: auto;
+  height: auto;
+}
+.carousel-indicators li.active span {
+  background: #E0E0E0;
+  border-color: #E0E0E0;
+  margin: -11px 1px 0;
+}
+.carousel-indicators li span {
+  display: block;
+  width: 10px;
+  height: 10px;
+  cursor: pointer;
+  border: 1px solid #666666;
+  border-radius: 50%;
+  background: #666666;
+}
+footer {
+  padding-bottom: 20px;
+}
+footer .span6:nth-child(2) {
+  text-align: right;
+}
+* {
+  font-family: "Roboto", sans-serif;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Roboto", sans-serif;
+  font-weight: lighter;
+}
+section h1 {
+  font-size: 24px;
+  font-weight: 300;
+}
+section h2 {
+  font-size: 18px;
+  font-weight: 300;
+}
+body,
+a {
+  color: #000000;
+}
+a {
+  color: #000000;
+}
+a:hover {
+  color: #939393;
+  text-decoration: none;
+}
+ul {
+  margin: 0;
+  padding: 0;
+}
+h1 {
+  margin-bottom: 30px;
+}
+.language-menu {
+  margin-bottom: 20px;
+  text-align: right;
+}
+.language-menu span,
+.language-menu a {
+  font-weight: 300;
+  font-size: 17px;
+}
+.language-menu span {
+  color: #939393;
+}
+.language-menu a {
+  color: #000000;
+  text-decoration: none;
+  border-bottom: 1px solid #000000;
+}
+.language-menu a:hover,
+.language-menu a.selected {
+  color: #939393;
+  border: none;
+}
+section.personal-info {
+  margin-top: 80px;
+  margin-bottom: 50px;
+  zoom: 1;
+}
+section.personal-info .col-lg-4 {
+  padding-left: 0;
+}
+section.personal-info .col-lg-8 {
+  padding-right: 0;
+}
+section.personal-info .face {
+  margin-top: 20px;
+}
+section.personal-info .face + div {
+  margin-top: 20px;
+}
+section.personal-info h1 {
+  margin-top: -3px;
+  margin-bottom: 10px;
+}
+section.personal-info .flatblock {
+  padding-right: 22px;
+  line-height: 1.6;
+}
+section.personal-info .main-links {
+  margin-top: 15px;
+}
+section.personal-info .main-links ul {
+  margin: 0;
+  list-style-type: none;
+}
+section.personal-info .main-links ul li {
+  padding: 5px 0;
+}
+section.personal-info .main-links ul li a {
+  color: #000000;
+  border-bottom: 1px solid #000000;
+}
+section.personal-info .main-links ul li a:hover {
+  color: #939393;
+  border-color: #939393;
+}
+section.personal-info .links.social {
+  display: block;
+  margin-top: 20px;
+}
+section.personal-info .links.social ul {
+  margin: 0;
+  list-style-type: none;
+}
+section.personal-info .links.social ul li {
+  display: inline-block;
+}
+section.personal-info .links.social ul li a {
+  color: #000000;
+  border-bottom: 1px solid #000000;
+}
+section.personal-info .links.social ul li a:hover {
+  color: #939393;
+  border-color: #939393;
+}
+section.personal-info .links.social ul li a {
+  margin-right: 20px;
+  font-size: 13px;
+}
+section.personal-info:before,
+section.personal-info:after {
+  content: "020";
+  display: block;
+  font-size: 0;
+  height: 0;
+  visibility: hidden;
+}
+section.personal-info:after {
+  clear: both;
+}
+section.principles-of-creativity {
+  margin-bottom: 30px;
+  padding-top: 10px;
+  background: url("/static/img/stripes.png");
+  zoom: 1;
+}
+section.principles-of-creativity .container {
+  padding-bottom: 18px;
+}
+section.principles-of-creativity .wrapper {
+  background: url("/static/img/coffee.png") right bottom no-repeat;
+  padding-bottom: 15px;
+  zoom: 1;
+}
+section.principles-of-creativity .wrapper .col-lg-4:first-child {
+  padding-left: 0;
+}
+section.principles-of-creativity .wrapper .col-lg-4:last-child {
+  padding-right: 0;
+}
+section.principles-of-creativity .wrapper:before,
+section.principles-of-creativity .wrapper:after {
+  content: "020";
+  display: block;
+  font-size: 0;
+  height: 0;
+  visibility: hidden;
+}
+section.principles-of-creativity .wrapper:after {
+  clear: both;
+}
+section.principles-of-creativity h1 {
+  text-align: left;
+  margin-bottom: 20px;
+}
+section.principles-of-creativity p {
+  font-size: 17px;
+  font-weight: 300;
+  vertical-align: top;
+}
+section.principles-of-creativity:before,
+section.principles-of-creativity:after {
+  content: "020";
+  display: block;
+  font-size: 0;
+  height: 0;
+  visibility: hidden;
+}
+section.principles-of-creativity:after {
+  clear: both;
+}
+section.tumblr-posts {
+  margin-bottom: 30px;
+  zoom: 1;
+}
+section.tumblr-posts .wrapper {
+  margin-left: -25px;
+  margin-right: -25px;
+  padding: 25px 0 15px;
+  border: 2px dashed #939393;
+  zoom: 1;
+}
+section.tumblr-posts .wrapper .col-lg-4:first-child {
+  padding-left: 25px;
+}
+section.tumblr-posts .wrapper .col-lg-4:last-child {
+  padding-right: 25px;
+}
+section.tumblr-posts .wrapper:before,
+section.tumblr-posts .wrapper:after {
+  content: "020";
+  display: block;
+  font-size: 0;
+  height: 0;
+  visibility: hidden;
+}
+section.tumblr-posts .wrapper:after {
+  clear: both;
+}
+section.tumblr-posts h1 {
+  margin-bottom: 30px;
+}
+section.tumblr-posts p {
+  padding-top: 10px;
+}
+section.tumblr-posts a {
+  color: #000000;
+  border-bottom: 1px solid #000000;
+}
+section.tumblr-posts a:hover {
+  color: #939393;
+  border-color: #939393;
+}
+section.tumblr-posts:before,
+section.tumblr-posts:after {
+  content: "020";
+  display: block;
+  font-size: 0;
+  height: 0;
+  visibility: hidden;
+}
+section.tumblr-posts:after {
+  clear: both;
+}
+section.public-activities {
+  color: #000000;
+  zoom: 1;
+}
+section.public-activities .activity.col-lg-6:nth-child(odd) {
+  padding-left: 0;
+}
+section.public-activities .activity.col-lg-6:nth-child(even) {
+  padding-right: 0;
+}
+section.public-activities .activity .slide + div {
+  margin-top: 35px;
+}
+section.public-activities .activity .slide + div a {
+  color: #000000;
+  border-bottom: 1px solid #000000;
+}
+section.public-activities .activity .slide + div a:hover {
+  color: #939393;
+  border-color: #939393;
+}
+section.public-activities:before,
+section.public-activities:after {
+  content: "020";
+  display: block;
+  font-size: 0;
+  height: 0;
+  visibility: hidden;
+}
+section.public-activities:after {
+  clear: both;
+}
+section.super-important-thing {
+  margin: 50px 0 20px;
+  text-align: center;
+}
+section.super-important-thing span {
+  display: inline-block;
+  width: 61px;
+  height: 61px;
+  background: url("/static/img/owl.png") center center no-repeat;
+}
+section.super-important-thing span:hover {
+  background: url("/static/img/owl-kawaii.png") center center no-repeat;
+}
+footer .col-lg-6:last-child {
+  text-align: right;
+}
+@media screen and (max-width: 1199px) {
+  .carousel-indicators {
+    display: none;
+  }
+  section.carousel figcaption {
+    padding-right: 0;
+  }
+  section.personal-info {
+    margin-top: 45px;
+  }
+  section.principles-of-creativity .wrapper {
+    padding-bottom: 35px;
+  }
+  section.principles-of-creativity .wrapper .col-lg-4 {
+    padding-left: 0;
+  }
+  section.principles-of-creativity .wrapper .col-lg-4 p {
+    margin-bottom: 20px;
+  }
+  section.tumblr-posts .wrapper .col-lg-4 {
+    padding-left: 25px;
+  }
+  section.public-activities .activity.col-lg-6 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  section.public-activities .activity.col-lg-6 .slide + div {
+    margin-top: 10px;
+  }
+  section.public-activities .activity.col-lg-6 figure {
+    text-align: center;
+  }
+  section.public-activities .activity.col-lg-6 figure img {
+    display: inline-block;
+  }
+  footer .col-lg-6 {
+    float: left;
+    width: 50%;
+  }
+}
+@media screen and (max-width: 768px) {
+  #main-slider figcaption {
+    width: 60%;
+  }
+}
+.phone_styles header {
+  height: auto;
+}
+.phone_styles header nav {
+  text-align: left;
+}
+.phone_styles header nav h1 {
+  width: 100%;
+  margin-bottom: 0;
+}
+.phone_styles header nav h1 html[lang="en"] {
+  font-size: 19px;
+}
+.phone_styles header nav .email-me {
+  display: block;
+  float: left;
+  margin: 10px 0;
+}
+.phone_styles .language-menu {
+  text-align: left;
+  margin-bottom: 10px;
+}
+.phone_styles #main-slider figcaption {
+  display: none;
+}
+.phone_styles section.personal-info {
+  margin-top: 35px;
+}
+.phone_styles section.personal-info .face {
+  display: none;
+}
+.phone_styles section.personal-info .face + div {
+  width: 100%;
+  padding-left: 0;
+}
+.phone_styles section.personal-info .face + div .flatblock {
+  padding-right: 0;
+}
+@media screen and (device-aspect-ratio: 40/71) {
+  header {
+    height: auto;
+  }
+  header nav {
+    text-align: left;
+  }
+  header nav h1 {
+    width: 100%;
+    margin-bottom: 0;
+  }
+  header nav h1 html[lang="en"] {
+    font-size: 19px;
+  }
+  header nav .email-me {
+    display: block;
+    float: left;
+    margin: 10px 0;
+  }
+  .language-menu {
+    text-align: left;
+    margin-bottom: 10px;
+  }
+  #main-slider figcaption {
+    display: none;
+  }
+  section.personal-info {
+    margin-top: 35px;
+  }
+  section.personal-info .face {
+    display: none;
+  }
+  section.personal-info .face + div {
+    width: 100%;
+    padding-left: 0;
+  }
+  section.personal-info .face + div .flatblock {
+    padding-right: 0;
+  }
+}
+@media screen and (device-aspect-ratio: 2/3) {
+  header {
+    height: auto;
+  }
+  header nav {
+    text-align: left;
+  }
+  header nav h1 {
+    width: 100%;
+    margin-bottom: 0;
+  }
+  header nav h1 html[lang="en"] {
+    font-size: 19px;
+  }
+  header nav .email-me {
+    display: block;
+    float: left;
+    margin: 10px 0;
+  }
+  .language-menu {
+    text-align: left;
+    margin-bottom: 10px;
+  }
+  #main-slider figcaption {
+    display: none;
+  }
+  section.personal-info {
+    margin-top: 35px;
+  }
+  section.personal-info .face {
+    display: none;
+  }
+  section.personal-info .face + div {
+    width: 100%;
+    padding-left: 0;
+  }
+  section.personal-info .face + div .flatblock {
+    padding-right: 0;
+  }
+}
+@media screen and (max-width: 480px) {
+  header {
+    height: auto;
+  }
+  header nav {
+    text-align: left;
+  }
+  header nav h1 {
+    width: 100%;
+    margin-bottom: 0;
+  }
+  header nav h1 html[lang="en"] {
+    font-size: 19px;
+  }
+  header nav .email-me {
+    display: block;
+    float: left;
+    margin: 10px 0;
+  }
+  .language-menu {
+    text-align: left;
+    margin-bottom: 10px;
+  }
+  #main-slider figcaption {
+    display: none;
+  }
+  section.personal-info {
+    margin-top: 35px;
+  }
+  section.personal-info .face {
+    display: none;
+  }
+  section.personal-info .face + div {
+    width: 100%;
+    padding-left: 0;
+  }
+  section.personal-info .face + div .flatblock {
+    padding-right: 0;
+  }
+}
