@@ -49,7 +49,7 @@ STATICFILES_FINDERS = (
     "django.contrib.staticfiles.finders.AppDirectoriesFinder",
     "django.contrib.staticfiles.finders.FileSystemFinder",
 
-    "compressor.finders.CompressorFinder",
+    "static_precompiler.finders.StaticPrecompilerFinder",
 )
 
 # Make this unique, and don"t share it with anybody.
@@ -108,7 +108,7 @@ INSTALLED_APPS = (
     "south",
     "gunicorn",
     "sorl.thumbnail",
-    "compressor",
+    "static_precompiler",
     "flatblocks",
     "redator",
     "raven.contrib.django.raven_compat",
@@ -131,10 +131,6 @@ SUIT_CONFIG = {
     "ADMIN_NAME": "Nadezhdanova.com",
     "MENU_EXCLUDE": ("auth.group", "auth", "sites"),
 }
-
-COMPRESS_PRECOMPILERS = (
-    ("text/less", "lessc {infile} {outfile}"),
-)
 
 # Redactor
 REDATOR_REDACTOR_OPTIONS = {
