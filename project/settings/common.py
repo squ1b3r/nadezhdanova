@@ -48,8 +48,6 @@ STATICFILES_DIRS = (
 STATICFILES_FINDERS = (
     "django.contrib.staticfiles.finders.AppDirectoriesFinder",
     "django.contrib.staticfiles.finders.FileSystemFinder",
-
-    "static_precompiler.finders.StaticPrecompilerFinder",
 )
 
 # Make this unique, and don"t share it with anybody.
@@ -126,7 +124,6 @@ LOCALE_PATHS = (
 from logging import LOGGING
 
 # 3rd party apps settigns.
-
 SUIT_CONFIG = {
     "ADMIN_NAME": "Nadezhdanova.com",
     "MENU_EXCLUDE": ("auth.group", "auth", "sites"),
