@@ -5,6 +5,8 @@
 *.pyo
 *.db
 
+.DS_Store
+
 bin/
 downloads/
 eggs/
@@ -17,7 +19,6 @@ project/media/
 project/settings/development.py
 project/settings/production.py
 
-.DS_Store
-
 /src/
 /.mr.developer.cfg
+/.sass-cache/

@@ -1,4 +1,4 @@
-@import "../base";
+@import "base";
 
 h1 {
   margin-bottom: 30px;
@@ -14,15 +14,15 @@ h1 {
   }
 
   span {
-    color: @dark_link_color_active;
+    color: $dark_link_color_active;
   }
   a {
-    color: @dark_link_color;
+    color: $dark_link_color;
     text-decoration: none;
     border-bottom: 1px solid #000000;
 
     &:hover, &.selected {
-      color: @dark_link_color_active;
+      color: $dark_link_color_active;
       border: none;
     }
   }
@@ -63,7 +63,7 @@ section.personal-info {
       li {
         padding: 5px 0;
 
-        .default_link
+        @include default_link;
       }
     }
   }
@@ -78,7 +78,7 @@ section.personal-info {
       li {
         display: inline-block;
 
-        .default_link;
+        @include default_link;
         a {
           margin-right: 20px;
           font-size: 13px;
@@ -86,7 +86,7 @@ section.personal-info {
       }
     }
   }
-  .clearfix;
+  @include clearfix;
 }
 
 section.principles-of-creativity {
@@ -108,7 +108,7 @@ section.principles-of-creativity {
     .col-lg-4:last-child {
       padding-right: 0;
     }
-    .clearfix;
+    @include clearfix;
   }
   h1 {
     text-align: left;
@@ -119,7 +119,7 @@ section.principles-of-creativity {
     font-weight: 300;
     vertical-align: top;
   }
-  .clearfix;
+  @include clearfix;
 }
 
 section.tumblr-posts {
@@ -129,7 +129,7 @@ section.tumblr-posts {
     margin-left: -25px;
     margin-right: -25px;
     padding: 25px 0 15px;
-    border: 2px dashed @dark_link_color_active;
+    border: 2px dashed $dark_link_color_active;
 
     .col-lg-4:first-child {
       padding-left: 25px;
@@ -137,7 +137,7 @@ section.tumblr-posts {
     .col-lg-4:last-child {
       padding-right: 25px;
     }
-    .clearfix;
+    @include clearfix;
   }
   h1 {
     margin-bottom: 30px;
@@ -145,12 +145,12 @@ section.tumblr-posts {
   p {
     padding-top: 10px;
   }
-  .default_link;
-  .clearfix;
+  @include default_link;
+  @include clearfix;
 }
 
 section.public-activities {
-  color: @dark_text_color;
+  color: $dark_text_color;
 
   .activity {
     &.col-lg-6:nth-child(odd) {
@@ -161,10 +161,10 @@ section.public-activities {
     }
     .slide + div {
       margin-top: 35px;
-      .default_link;
+      @include default_link;
     }
   }
-  .clearfix;
+  @include clearfix;
 }
 
 section.super-important-thing {
@@ -249,7 +249,7 @@ footer {
   }
 }
 
-.phone_styles {
+@mixin phone_layout {
   header {
     height: auto;
 
@@ -300,14 +300,14 @@ footer {
 
 // iPhone 5
 @media screen and (device-aspect-ratio: 40/71) {
-  .phone_styles;
+  @include phone_layout;
 }
 
 // iPhone < 5
 @media screen and (device-aspect-ratio: 2/3) {
-  .phone_styles;
+  @include phone_layout;
 }
 
 @media screen and (max-width:480px) {
-  .phone_styles;
+  @include phone_layout;
 }

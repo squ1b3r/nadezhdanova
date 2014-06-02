@@ -13,20 +13,7 @@ from activities.models import Activity
 from works.models import Slide
 
 
-class PageTitleMixin(object):
-
-    page_title = u""
-
-    def get_page_title(self):
-        return self.page_title
-
-    def get_context_data(self, **kwargs):
-        context = super(PageTitleMixin, self).get_context_data(**kwargs)
-        context["page_title"] = self.get_page_title()
-        return context
-
-
-class Frontpage(PageTitleMixin, TemplateView):
+class Frontpage(TemplateView):
 
     template_name = "frontpage.html"
     page_title = _(u"Nadya Kutyreva")

@@ -48,6 +48,8 @@ STATICFILES_DIRS = (
 STATICFILES_FINDERS = (
     "django.contrib.staticfiles.finders.AppDirectoriesFinder",
     "django.contrib.staticfiles.finders.FileSystemFinder",
+
+    "compressor.finders.CompressorFinder",
 )
 
 # Make this unique, and don"t share it with anybody.
@@ -106,10 +108,10 @@ INSTALLED_APPS = (
     "south",
     "gunicorn",
     "sorl.thumbnail",
-    "static_precompiler",
     "flatblocks",
     "redator",
     "raven.contrib.django.raven_compat",
+    "compressor",
 
     # project apps.
     "activities",
@@ -136,3 +138,8 @@ REDATOR_REDACTOR_OPTIONS = {
     "removeEmptyTags": True,
     "pastePlainText": True,
 }
+
+# Django Compressor
+COMPRESS_PRECOMPILERS = (
+    ("text/x-scss", "sass --scss {infile} {outfile}"),
+)

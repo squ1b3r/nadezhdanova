@@ -1,9 +1,11 @@
+@import "variables";
+
 figure {
   position: relative;
 
   figcaption {
     position: absolute !important;
-    top: calc(~"100% - 25px - 40px");
+    top: calc(100% - 25px - 40px);
     left: 0;
     bottom: 25px;
     padding-left: 0 !important;
@@ -32,7 +34,7 @@ figure {
     display: block;
     height: 40px;
     padding: 9px 30px;
-    color: @bright_text_color;
+    color: $bright_text_color;
     text-align: left;
     background: rgba(0, 0, 0, .60);
     transition: height 0.7s ease-in-out 0.3s, padding-top 0.7s ease-in-out, padding-bottom 0.7s ease-in-out;
@@ -72,8 +74,6 @@ figure {
 
 .container .carousel-control {
   background: none;
-  background-image: none;
-
 }
 .carousel-indicators {
   width: auto;

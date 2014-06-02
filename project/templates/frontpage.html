@@ -26,10 +26,10 @@
           $(_this).carousel("prev");
         });
       })
-      $("#main-slider figcaption").hover(
+      $("#main-slider").find("figcaption").hover(
         function() {
           $(this).addClass("active");
-          $("#main-slider .carousel-control.left").hide();
+          $("#main-slider").find(".carousel-control.left").hide();
         },
         function() {
           var _this = this;
@@ -38,7 +38,7 @@
           setTimeout(function () {
             $(_this).find(".description").removeClass("transition");
           }, 100);
-          $("#main-slider .carousel-control.left").show();
+          $("#main-slider").find(".carousel-control.left").show();
         }
       );
     });

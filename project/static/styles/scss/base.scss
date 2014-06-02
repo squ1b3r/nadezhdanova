@@ -25,14 +25,14 @@ section {
 }
 
 body, a {
-  color: @dark_text_color;
+  color: $dark_text_color;
 }
 
 a {
-  color: @dark_text_color;
+  color: $dark_text_color;
 
   &:hover {
-    color: @dark_link_color_active;
+    color: $dark_link_color_active;
     text-decoration: none;
   }
 }
