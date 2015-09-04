@@ -3,7 +3,7 @@
 
 from os.path import dirname, join, abspath
 
-DEBUG = True
+DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
