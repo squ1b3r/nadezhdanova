@@ -54,7 +54,6 @@ class Frontpage(TemplateView):
         context = super(Frontpage, self).get_context_data(**kwargs)
         context["main_slides"] = self.get_main_slides()
         context["activities"] = self.get_activities()
-        context["tumblr_posts"] = self.get_tumblr_posts(3)
         return context
 
 
