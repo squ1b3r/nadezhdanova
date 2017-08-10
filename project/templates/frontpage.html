@@ -3,70 +3,24 @@
 {% load i18n %}
 {% load staticfiles %}
 {% load thumbnail %}
-{% load flatblock_tags %}
-
-{% block extrascript %}
-  <script>
-    $(function() {
-      $(".carousel").each(function() {
-        var _this = this;
-        $(this).carousel({
-          interval: 0
-        });
-        $(this).find("img").on("click", function(event) {
-          event.preventDefault();
-          $(_this).carousel("next");
-        });
-        $(this).find("img").on("swipeleft", function(event) {
-          event.preventDefault();
-          $(_this).carousel("next");
-        });
-        $(this).find("img").on("swiperight", function(event) {
-          event.preventDefault();
-          $(_this).carousel("prev");
-        });
-      })
-      $("#main-slider").find("figcaption").hover(
-        function() {
-          $(this).addClass("active");
-          $("#main-slider").find(".carousel-control.left").hide();
-        },
-        function() {
-          var _this = this;
-          $(this).find(".description").addClass("transition");
-          $(this).removeClass("active");
-          setTimeout(function () {
-            $(_this).find(".description").removeClass("transition");
-          }, 100);
-          $("#main-slider").find(".carousel-control.left").show();
-        }
-      );
-    });
-  </script>
-{% endblock extrascript %}
+{% load i18n_tags %}
 
 {% block container %}
   <div class="container">
-    <nav class="language-menu">
-      {% if request.LANGUAGE_CODE == "ru" %}
-        <span>RU</span>
-        <a href="{% url "set_language" "en" %}?from={{ request.get_full_path|urlencode }}" title="English" rel="external">EN</a>
-      {% else %}
-        <a href="{% url "set_language" "ru" %}?from={{ request.get_full_path|urlencode }}" title="Russian" rel="external">RU</a>
-        <span>EN</span>
-      {% endif %}
-    </nav>
+
+    {% include "include/language-menu.html" %}
     {% include "include/slider.html" %}
+
     <section class="personal-info">
       <div class="col-lg-4 col-md-4 col-xs-4 face">
         <img src="{% static "img/photo.jpg" %}" alt="{% trans "Nadya Kutyreva" %}" class="img-responsive">
       </div>
-      <div class="col-lg-8 col-md-8 col-xs-8">
+      <div class="col-lg-8 col-md-8 col-xs-8 ">
         <h1>{% trans "About Me" %}</h1>
         {% if request.LANGUAGE_CODE == "ru" %}
-          {% flatblock "personal-info-ru" %}
+          {% include "include/personal-info-ru.html" %}
         {% else %}
-          {% flatblock "personal-info" %}
+          {% include "include/personal-info.html" %}
         {% endif %}
         <div class="main-links">
           <ul>
@@ -124,22 +78,7 @@
       </div>
     </div>
   </section>
-  {% if tumblr_posts %}
-    <section class="tumblr-posts container">
-      <h1>
-        <a href="{% if request.LANGUAGE_CODE == "ru" %}http://nadezhdanova.tumblr.com{% else %}http://nadezhdanova-eng.tumblr.com{% endif %}">
-          {% trans "Blog" %}
-        </a>
-      </h1>
-      <div class="wrapper row">
-        {% for post in tumblr_posts %}
-          <div class="col-lg-4">
-            <a href="{{ post.url }}" target="_blank">{{ post.title }}</a>
-            <p>{{ post.text|truncatewords:25 }}</p>
-          </div>
-        {% endfor %}
-    </section>
-  {% endif %}
+
   <div class="container">
     {% if activities %}
       <section class="public-activities">
@@ -150,7 +89,7 @@
         <div class="activities">
           {% for activity in activities %}
             <div class="activity col-lg-6">
-              <h2>{{ activity.title }}</h2>
+              <h2>{% trans_field activity "title" %}</h2>
               <section id="activity-{{ activity.id }}" class="carousel slide">
                 <div class="carousel-inner">
                   {% for activity_slide in activity.slides.all %}
@@ -178,7 +117,7 @@
                   <span class="icon-next"></span>
                 </a>
               </section>
-              <div>{{ activity.text|safe }}</div>
+              <div>{% trans_field activity "text" %}</div>
             </div>
           {% endfor %}
         </div>

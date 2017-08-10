@@ -1,4 +1,5 @@
 {% load thumbnail %}
+{% load i18n_tags %}
 
 <section id="main-slider" class="carousel slide">
   <div class="carousel-inner">
@@ -10,10 +11,10 @@
           {% endthumbnail %}
           <figcaption class="col-lg-4 col-md-4">
             <div class="inner">
-              <h1>{{ slide.title }}</h1>
+              <h1>{% trans_field slide "title" %}</h1>
               <div class="description">
-                {{ slide.description|safe }}
-                {{ slide.text|safe }}
+                {% trans_field slide "description" %}
+                {% trans_field slide "text" %}
               </div>
             </div>
           </figcaption>

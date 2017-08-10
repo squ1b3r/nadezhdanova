@@ -1,0 +1,21 @@
+<nav class="language-menu">
+  {% if request.LANGUAGE_CODE == "ru" %}
+    <form action="{% url 'set_language' %}" method="post">
+      {% csrf_token %}
+      <input name="next" type="hidden" value="{{ redirect_to }}" />
+      <input name="language" type="hidden" value="en" />
+
+      <span>RU</span>
+      <a href="javascript:{}" onclick="$(this).closest('form').submit(); return false;">EN</a>
+    </form>
+  {% else %}
+    <form action="{% url 'set_language' %}" method="post">
+      {% csrf_token %}
+      <input name="next" type="hidden" value="{{ redirect_to }}" />
+      <input name="language" type="hidden" value="ru" />
+
+      <a href="javascript:{}" onclick="$(this).closest('form').submit(); return false;">RU</a>
+      <span>EN</span>
+    </form>
+  {% endif %}
+</nav>

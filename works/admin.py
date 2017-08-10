@@ -4,7 +4,6 @@ import django.utils.html
 
 import sorl.thumbnail
 import sorl.thumbnail.admin
-import ckeditor.widgets
 
 import works.models
 
@@ -25,10 +24,6 @@ class SlideAdmin(sorl.thumbnail.admin.AdminImageMixin, django.contrib.admin.Mode
         "text_ru",
     )
     sortable = "order"
-
-    formfield_overrides = {
-        django.db.models.TextField: {"widget": ckeditor.widgets.CKEditorWidget}
-    }
 
     css = {
         "all": ("/media/css/admin.css",)

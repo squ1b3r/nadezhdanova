@@ -28,7 +28,7 @@ h1 {
   }
 }
 
-section.personal-info {
+.personal-info {
   margin-top: 80px;
   margin-bottom: 50px;
 
@@ -49,9 +49,8 @@ section.personal-info {
     margin-top: -3px;
     margin-bottom: 10px;
   }
-  .flatblock {
-    padding-right: 22px;
-    line-height: 1.6
+  p {
+    line-height: 1.5em;
   }
   .main-links {
     margin-top: 15px;
@@ -89,7 +88,7 @@ section.personal-info {
   @include clearfix;
 }
 
-section.principles-of-creativity {
+.principles-of-creativity {
   margin-bottom: 30px;
   padding-top: 10px;
   background: url("/static/img/stripes.png");
@@ -122,34 +121,7 @@ section.principles-of-creativity {
   @include clearfix;
 }
 
-section.tumblr-posts {
-  margin-bottom: 30px;
-
-  .wrapper {
-    margin-left: -25px;
-    margin-right: -25px;
-    padding: 25px 0 15px;
-    border: 2px dashed $dark_link_color_active;
-
-    .col-lg-4:first-child {
-      padding-left: 25px;
-    }
-    .col-lg-4:last-child {
-      padding-right: 25px;
-    }
-    @include clearfix;
-  }
-  h1 {
-    margin-bottom: 30px;
-  }
-  p {
-    padding-top: 10px;
-  }
-  @include default_link;
-  @include clearfix;
-}
-
-section.public-activities {
+.public-activities {
   color: $dark_text_color;
 
   .activity {
@@ -167,7 +139,7 @@ section.public-activities {
   @include clearfix;
 }
 
-section.super-important-thing {
+.super-important-thing {
   margin: 50px 0 20px;
   text-align: center;
 
@@ -195,17 +167,17 @@ footer {
     display: none;
   }
 
-  section.carousel {
+  .carousel {
     figcaption {
       padding-right: 0;
     }
   }
 
-  section.personal-info {
+  .personal-info {
     margin-top: 45px;
   }
 
-  section.principles-of-creativity .wrapper {
+  .principles-of-creativity .wrapper {
     padding-bottom: 35px;
 
     .col-lg-4 {
@@ -216,12 +188,7 @@ footer {
       }
     }
   }
-  section.tumblr-posts .wrapper {
-    .col-lg-4 {
-      padding-left: 25px;
-    }
-  }
-  section.public-activities .activity.col-lg-6 {
+  .public-activities .activity.col-lg-6 {
     padding-left: 0;
     padding-right: 0;
 
@@ -280,7 +247,7 @@ footer {
       display: none;
     }
   }
-  section.personal-info {
+  .personal-info {
     margin-top: 35px;
 
     .face {

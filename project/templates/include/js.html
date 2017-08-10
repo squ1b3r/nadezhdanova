@@ -1,9 +1,13 @@
 {% load staticfiles %}
 {% load compress %}
 
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"
+        integrity="sha256-/SIrNqv8h6QGKDuNoLGA4iret+kyesCkHGzVUUV0shc="
+        crossorigin="anonymous"></script>
+
 {% compress js %}
-  <script src="{% static "js/lib/jquery-1.11.1.min.js" %}"></script>
-  <script src="{% static "js/lib/jquery.mobile-1.4.2.min.js" %}"></script>
   <script src="{% static "js/lib/bootstrap/transition.js" %}"></script>
   <script src="{% static "js/lib/bootstrap/carousel.js" %}"></script>
+
+  <script src="{% static "js/slider.js" %}"></script>
 {% endcompress %}
