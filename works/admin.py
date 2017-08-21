@@ -25,9 +25,18 @@ class SlideAdmin(sorl.thumbnail.admin.AdminImageMixin, django.contrib.admin.Mode
     )
     sortable = "order"
 
-    css = {
-        "all": ("/media/css/admin.css",)
-    }
+    class Media:
+        js = (
+            "/static/js/lib/trumbowyg.min.js",
+            "/static/js/admin.js"
+        )
+
+        css = {
+            "all": (
+                "/static/styles/css/lib/trumbowyg.min.css",
+                "/media/css/admin.css",
+            )
+        }
 
     def slide_thumbnail(self, obj):
         if obj.image:
@@ -38,4 +47,3 @@ class SlideAdmin(sorl.thumbnail.admin.AdminImageMixin, django.contrib.admin.Mode
         return ""
 
     slide_thumbnail.short_description = "Slide"
-    slide_thumbnail.allow_tags = True

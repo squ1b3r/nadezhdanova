@@ -1,4 +1,3 @@
-import django.db.models
 import django.contrib.admin
 
 import sorl.thumbnail.admin
@@ -18,3 +17,13 @@ class ActivityAdmin(django.contrib.admin.ModelAdmin):
 
     list_display = ("title",)
     inlines = (ActivitySlideInline,)
+
+    class Media:
+        js = (
+            "/static/js/lib/trumbowyg.min.js",
+            "/static/js/admin.js"
+        )
+
+        css = {
+            "all": ("/static/styles/css/lib/trumbowyg.min.css",)
+        }
