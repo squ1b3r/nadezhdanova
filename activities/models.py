@@ -18,7 +18,10 @@ class Activity(models.Model):
     text = models.TextField(verbose_name=_("Text"))
     text_ru = models.TextField(verbose_name=_("Text (ru)"), blank=True, null=True)
 
+    order = models.PositiveIntegerField(default=0)
+
     class Meta:
+        ordering = ("order",)
         verbose_name_plural = _("Activities")
 
     def __str__(self):
