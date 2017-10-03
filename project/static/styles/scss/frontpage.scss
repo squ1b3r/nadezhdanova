@@ -121,6 +121,11 @@ h1 {
   @include clearfix;
 }
 
+.public-projects-description {
+  width: 50%;
+  padding-right: 15px;
+}
+
 .public-activities {
   color: $dark_text_color;
 
@@ -204,6 +209,10 @@ footer {
 @media screen and (max-width: 768px) {
   #main-slider figcaption {
     width: 60%;
+  }
+  .public-projects-description {
+    width: 100%;
+    padding-right: 0;
   }
   .public-activities {
     .activity {
