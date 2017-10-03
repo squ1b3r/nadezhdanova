@@ -15,8 +15,10 @@ class ActivitySlideInline(sorl.thumbnail.admin.AdminImageMixin, django.contrib.a
 @django.contrib.admin.register(activities.models.Activity)
 class ActivityAdmin(django.contrib.admin.ModelAdmin):
 
-    list_display = ("title",)
+    list_display = ("title", "order")
+    list_editable = ("order",)
     inlines = (ActivitySlideInline,)
+    sortable = "order"
 
     class Media:
         js = (
