@@ -21,7 +21,7 @@ class Activity(models.Model):
     order = models.PositiveIntegerField(default=0)
 
     class Meta:
-        ordering = ("order",)
+        ordering = ("-order",)
         verbose_name_plural = _("Activities")
 
     def __str__(self):
