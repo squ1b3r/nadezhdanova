@@ -136,4 +136,4 @@ msgstr "Общественные проекты"
 
 #: project/templates/frontpage.html:127
 msgid "I can talk hours about architecture, design, and projecting process. In that way I am doing a few projects to develop the architectural community in Chelyabinsk. My friends help me in those activities."
-msgstr "Об архитектуре, дизайне, проектировании я могу говорить часами. Поэтому с помощью своих друзей я делаю несколько некоммерческих проектов для развития архитектурного сообщества в Челябинске."
+msgstr "Об архитектуре, дизайне, проектировании я могу говорить часами. Поэтому <br> с помощью своих друзей я делаю несколько некоммерческих проектов <br> для развития архитектурного сообщества в Челябинске."

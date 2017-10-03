@@ -6,7 +6,7 @@ ADD requirements.txt ./
 RUN pip install -r requirements.txt
 
 RUN apt-get update
-RUN apt-get install -y ruby ruby-dev
+RUN apt-get install -y ruby ruby-dev gettext
 RUN gem install sass
 
 ADD . .
