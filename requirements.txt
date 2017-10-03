@@ -3,7 +3,7 @@ ipython==6.1.0
 Pillow==4.2.1
 sorl-thumbnail==12.3
 django-autoslug==1.9.3
-django-compressor==2.1.1
+django-compressor==2.2
 django-dotenv==1.4.1
 django-suit==0.2.25
 
