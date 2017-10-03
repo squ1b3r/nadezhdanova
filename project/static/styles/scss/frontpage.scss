@@ -124,12 +124,19 @@ h1 {
 .public-activities {
   color: $dark_text_color;
 
+  .activities {
+    display: flex;
+    flex-wrap: wrap;
+  }
   .activity {
-    &.col-lg-6:nth-child(odd) {
-      padding-left: 0
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    &:nth-child(odd) {
+      padding-right: 15px;
     }
-    &.col-lg-6:nth-child(even) {
-      padding-right: 0
+    &:nth-child(even) {
+      padding-left: 15px;
     }
     .slide + div {
       margin-top: 35px;
@@ -188,22 +195,6 @@ footer {
       }
     }
   }
-  .public-activities .activity.col-lg-6 {
-    padding-left: 0;
-    padding-right: 0;
-
-    .slide + div {
-      margin-top: 10px;
-    }
-
-    figure {
-      text-align: center;
-
-      img {
-        display: inline-block;
-      }
-    }
-  }
   footer .col-lg-6 {
     float: left;
     width: 50%;
@@ -213,6 +204,29 @@ footer {
 @media screen and (max-width: 768px) {
   #main-slider figcaption {
     width: 60%;
+  }
+  .public-activities {
+    .activity {
+      &:nth-child(odd) {
+        padding-right: 0;
+      }
+      &:nth-child(even) {
+        padding-left: 0;
+      }
+      width: 100%;
+
+      .slide + div {
+        margin-top: 10px;
+      }
+
+      figure {
+        text-align: center;
+
+        img {
+          display: inline-block;
+        }
+      }
+    }
   }
 }
 
